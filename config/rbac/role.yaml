@@ -1,0 +1,70 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - events
+    verbs:
+      - create
+      - patch
+  - apiGroups:
+      - ""
+    resources:
+      - secrets
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - cert-manager.io
+    resources:
+      - certificaterequests
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - cert-manager.io
+    resources:
+      - certificaterequests/status
+    verbs:
+      - get
+      - patch
+      - update
+  - apiGroups:
+      - cert-manager.heers.it
+    resources:
+      - clusterissuers
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - cert-manager.heers.it
+    resources:
+      - clusterissuers/status
+    verbs:
+      - get
+      - patch
+      - update
+  - apiGroups:
+      - cert-manager.heers.it
+    resources:
+      - issuers
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - cert-manager.heers.it
+    resources:
+      - issuers/status
+    verbs:
+      - get
+      - patch
+      - update

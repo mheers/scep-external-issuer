@@ -1,0 +1,24 @@
+domain: heers.it
+layout:
+  - go.kubebuilder.io/v3
+projectName: scep-issuer
+repo: github.com/mheers/scep-external-issuer
+resources:
+  - api:
+      crdVersion: v1
+      namespaced: true
+    controller: true
+    domain: heers.it
+    group: cert-manager
+    kind: Issuer
+    path: github.com/mheers/scep-external-issuer/api/v1alpha1
+    version: v1alpha1
+  - api:
+      crdVersion: v1
+    controller: true
+    domain: heers.it
+    group: cert-manager
+    kind: ClusterIssuer
+    path: github.com/mheers/scep-external-issuer/api/v1alpha1
+    version: v1alpha1
+version: "3"

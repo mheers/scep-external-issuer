@@ -1,0 +1,7 @@
+apiVersion: cert-manager.heers.it/v1alpha1
+kind: SCEPIssuer
+metadata:
+  name: scep-sample-issuer
+spec:
+  authSecretName: scep-issuer-auth
+  url: http://192.168.2.7:2016/scep

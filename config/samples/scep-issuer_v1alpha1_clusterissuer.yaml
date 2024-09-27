@@ -1,0 +1,6 @@
+apiVersion: cert-manager.heers.it/v1alpha1
+kind: SCEPClusterIssuer
+metadata:
+  name: scep-clusterissuer-sample
+spec:
+  # TODO(user): Add fields here

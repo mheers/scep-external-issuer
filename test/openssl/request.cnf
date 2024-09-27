@@ -1,0 +1,15 @@
+[ req ]
+prompt = no
+string_mask = nombstr # required since openssl otherwise uses UTF8 and NDES can't read UTF8 fields
+attributes = req_attributes
+distinguished_name = req_dn
+req_extensions = req_ext
+
+[ req_ext ]
+subjectAltName = critical,DNS:www.example.com
+
+[req_dn]
+CN=www.example.com
+
+[ req_attributes ]
+challengePassword=secret
